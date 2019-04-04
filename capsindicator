@@ -1,0 +1,16 @@
+#/bin/bash
+#a simple implementation of xset -q to get the state of caps lock key
+#May be modified to get Num key too
+
+fg_color="#000000"
+bg_color="#44b1ff"
+indicator="Caps"
+
+stat=$(xset -q | grep ${indicator} | awk '{ print $4 }') #return either on || off
+
+if [ $(echo "on") = $stat ]
+then
+	echo "<span color=\"${fg_color}\" bgcolor=\"${bg_color}\"><b>$indicator</b> </span>"
+else
+	echo "<span color=\"${fg_color}\" bgcolor=\"${bg_color}\"><s><b>$indicator</b></s> </span>"
+fi
