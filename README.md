@@ -1,5 +1,6 @@
-#i3blocks config
+i3blocks config
+===============
 
-dependacies:
+## dependacies:
 beatifulSoup4 for prayer-time
 font-awesome
